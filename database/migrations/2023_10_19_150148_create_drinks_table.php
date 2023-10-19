@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string("drink_name", 100);
             $table->string("category", 50);
-            $table->boolean("alcoholic");
+            $table->string("alcoholic");
             $table->text("thumbnail");
             $table->json("ingredients");
             $table->decimal("price", 6, 2)->default(0.00);
