@@ -26,27 +26,27 @@ class DrinkSeeder extends Seeder
             foreach ($drinks as $drink) {
                 $newDrink = new Drink();
     
-                $newDrink->drink_name = $drink["strDrink"];
-                $newDrink->category = $drink["strCategory"];
-                $newDrink->alcoholic = $drink["strAlcoholic"];
-                $newDrink->thumbnail = $drink["strDrinkThumb"];
+                $newDrink->drink_name = $drink[0]["strDrink"] ?? "null";
+                $newDrink->category = $drink[0]["strCategory"] ?? "null";
+                $newDrink->alcoholic = $drink[0]["strAlcoholic"] ?? "null";
+                $newDrink->thumbnail = $drink[0]["strDrinkThumb"] ?? "null";
 
                 $ingredients = [
-                    $drink["strIngredient1"],
-                    $drink["strIngredient2"],
-                    $drink["strIngredient3"],
-                    $drink["strIngredient4"],
-                    $drink["strIngredient5"],
-                    $drink["strIngredient6"],
-                    $drink["strIngredient7"],
-                    $drink["strIngredient8"],
-                    $drink["strIngredient9"],
-                    $drink["strIngredient10"],
-                    $drink["strIngredient11"],
-                    $drink["strIngredient12"],
-                    $drink["strIngredient13"],
-                    $drink["strIngredient14"],
-                    $drink["strIngredient15"],
+                    $drink[0]["strIngredient1"] ?? "null",
+                    $drink[0]["strIngredient2"] ?? "null",
+                    $drink[0]["strIngredient3"] ?? "null",
+                    $drink[0]["strIngredient4"] ?? "null",
+                    $drink[0]["strIngredient5"] ?? "null",
+                    $drink[0]["strIngredient6"] ?? "null",
+                    $drink[0]["strIngredient7"] ?? "null",
+                    $drink[0]["strIngredient8"] ?? "null",
+                    $drink[0]["strIngredient9"] ?? "null",
+                    $drink[0]["strIngredient10"] ?? "null",
+                    $drink[0]["strIngredient11"] ?? "null",
+                    $drink[0]["strIngredient12"] ?? "null",
+                    $drink[0]["strIngredient13"] ?? "null",
+                    $drink[0]["strIngredient14"] ?? "null",
+                    $drink[0]["strIngredient15"] ?? "null",
                 ];
                 $newDrink->ingredients = json_encode($ingredients);
 
