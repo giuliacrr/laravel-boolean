@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('drinks', function (Blueprint $table) {
             $table->id();
+
+            $table->string("drink_name", 100);
+            $table->string("category", 50);
+            $table->boolean("alcoholic");
+            $table->text("thumbnail");
+            $table->json("ingredients");
+            $table->decimal("price", 6, 2)->default(0.00);
+
             $table->timestamps();
         });
     }
