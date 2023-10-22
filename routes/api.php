@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get("projects", [DrinkController::class, "index"]);
+Route::post("contacts", [ContactController::class, "store"]);
