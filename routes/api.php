@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("projects", [DrinkController::class, "index"]);
+Route::get("drinks", [DrinkController::class, "index"]);
 Route::post("contacts", [ContactController::class, "store"]);
