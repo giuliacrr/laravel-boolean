@@ -12,7 +12,13 @@ class DrinkController extends Controller
      */
     public function index()
     {
-        $drinks = Drink::all();
+        $queryString = request()->query();
+
+        if (array_key_exists('alcolFilter', $queryString) && $queryString['alcolFilter'] != 'All') {
+            $drinks = Drink::where('alcoholic', $queryString['alcolFilter'])->get();
+        } else {
+            $drinks = Drink::all();
+        }
 
         return response()->json($drinks);
     }
